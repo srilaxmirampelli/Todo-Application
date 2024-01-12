@@ -1,0 +1,80 @@
+// Get /todos/ path API 1
+-------------------------------------------------
+// Get list of all todos whose status is 'TO DO'
+
+
+GET http://localhost:3000/todos/?status=TO%20DO
+----------------------------------------------------------------
+// Get list of all todos whose priority is 'HIGH'
+
+
+GET http://localhost:3000/todos/?priority=HIGH
+-----------------------------------------------------------------------------
+// Get list of all todos whose priority is 'HIGH' and status is 'IN PROGRESS'
+
+
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+--------------------------------------------------------------------------
+// Get list of all todos whose todo contains 'Play' text
+
+
+GET http://localhost:3000/todos/?search_q=Node
+------------------------------------------------------------------------
+
+// Get a specific todo based on the todo ID API 2
+
+
+GET http://localhost:3000/todos/10/
+
+------------------------------------------------------------------------
+
+// Post a todo in the todo table API 3
+
+
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+  "id": 11,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+
+------------------------------------------------------------------------
+
+// Updates the details of a specific todo based on the todo ID API 4
+
+
+
+PUT http://localhost:3000/todos/11/
+Content-Type: application/json
+
+{
+  "todo": "LinkedIn post"
+}
+------------------------------------------------------------------------
+
+
+PUT http://localhost:3000/todos/11/
+Content-Type: application/json
+
+{
+  "priority": "HIGH"
+}
+------------------------------------------------------------------------
+
+
+PUT http://localhost:3000/todos/11/
+Content-Type: application/json
+
+{
+  "status": "DONE"
+}
+
+------------------------------------------------------------------------
+
+// Delete a todo from the todo table based on the todo ID API 5
+
+
+DELETE http://localhost:3000/todos/10/
